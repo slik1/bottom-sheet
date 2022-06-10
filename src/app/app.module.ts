@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/material.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BottomSheetMobileComponent, BottomSheetOverviewExampleSheet } from './bottom-sheet-mobile/bottom-sheet-mobile.component';
+import { BottomSheetMobileComponent, BottomSheetContent } from './bottom-sheet-mobile/bottom-sheet-mobile.component';
 
 import * as Hammer from 'hammerjs';
 import { HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -13,6 +13,7 @@ import { HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angul
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
+    pan: { direction: Hammer.DIRECTION_ALL },
   };
 }
 
@@ -20,7 +21,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   declarations: [
     AppComponent,
     BottomSheetMobileComponent,
-    BottomSheetOverviewExampleSheet
+    BottomSheetContent
   ],
   imports: [
     BrowserModule,
